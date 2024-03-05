@@ -17,5 +17,6 @@ nmp run dev
 ## Optimizations📱
 
 The project is optimised for desktop and mobile screens using React and CSS @media query.
+‼️Reload the page to use the react media in responsive design mode ‼️
 
 The components are also animated with the [Framer Library](https://www.framer.com/motion/).
