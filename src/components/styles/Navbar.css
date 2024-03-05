@@ -113,7 +113,7 @@ nav {
   transform: scale(0.95);
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
 
   nav {
     width: 100%;

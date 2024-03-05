@@ -39,9 +39,6 @@
 .card p.small {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  bottom: 15px;
-  left: 36px;
 }
 
 .go-corner {
@@ -113,21 +110,6 @@
   color: #fff;
 }
 
-.list-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px #00858f;
-}
-
-.container-fact{
-  display: flex;
-  justify-content: space-around;
-  align-items: safe;
-  flex-direction: row;
-}
-
 @media only screen and (max-width: 768px) {
   .card {
     width: auto;
@@ -154,11 +136,8 @@
   }
 
   .card p.small {
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      bottom: 15px;
-      left: 24px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
   }
 
   .card1 {
@@ -185,14 +164,5 @@
 
   a {
     height: 700px;
-  }
-
-  .list-img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px #00858f;
-    margin-left: 12px;
   }
 }

@@ -3,7 +3,6 @@ import "./styles/FactList.css";
 import FactDetails from "./FactDetails";
 import { useFactContext } from "../store/fact-details-context";
 import { motion  } from "framer-motion";
-import { getFactImage } from "../request";
 
 export default function FactList() {
   const {
@@ -51,7 +50,6 @@ export default function FactList() {
                     href="#"
                     onClick={(event) => { handleFactDetails(fact.fact, event); handleAnimation(); }}
                   >
-                    <div className="container-fact">
                     <p
                       style={
                         factDetails === fact.fact ? { color: "white" } : null
@@ -59,8 +57,6 @@ export default function FactList() {
                     >
                       {fact.fact}
                     </p>
-                    <img className="list-img" src={getFactImage()}/>
-                    </div>
                     <p
                       className="small"
                       style={
