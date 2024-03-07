@@ -155,8 +155,11 @@
   }
 
   .card p.small {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom: 15px;
+      left: 24px;
   }
 
   .card1 {
@@ -183,5 +186,14 @@
 
   a {
     height: 700px;
+  }
+
+  .list-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #00858f;
+    margin-left: 12px;
   }
 }
