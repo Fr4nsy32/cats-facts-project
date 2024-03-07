@@ -1,11 +1,11 @@
 import { createContext, useState, useContext } from "react";
-import { fetchFacts } from "../request";
+import { fetchFacts, getFactImage } from "../request";
 
 const FactContext = createContext();
 
 export const FactProvider = ({ children }) => {
   const [factDetails, setFactDetails] = useState(null);
-  const [facts, setFacts] = useState();
+  const [facts, setFacts] = useState([]);
   const [page, setPage] = useState(1);
   const mobileScreen = window.matchMedia("(max-width: 640px)").matches;
 
@@ -13,14 +13,18 @@ export const FactProvider = ({ children }) => {
     setFactDetails(null);
   };
 
-  const handleFactDetails = (fact, event) => {
+  const handleFactDetails = (fact, image, event) => {
     event.preventDefault();
-    setFactDetails(fact);
+    setFactDetails({fact: fact, image: image});
   };
 
   const fetchData = async () => {
     const data = await fetchFacts(page);
-    setFacts(data);
+    data.map((fact) => (
+      setFacts((prevFact) => [
+        ...prevFact,
+        {fact: fact.fact, length: fact.length, image: getFactImage()}])
+    ));
   };
 
   const handleNextPage = () => {
@@ -29,6 +33,7 @@ export const FactProvider = ({ children }) => {
     } else {
       setPage(page + 1);
       setFactDetails(null);
+      setFacts([]);
     }
   };
 
@@ -38,6 +43,7 @@ export const FactProvider = ({ children }) => {
     } else {
       setPage(page - 1);
       setFactDetails(null);
+      setFacts([]);
     }
   };
 

@@ -1,6 +1,5 @@
 import "./styles/FactDetails.css";
 import { useFactContext } from "../store/fact-details-context";
-import { getFactImage } from "../request";
 import { motion } from "framer-motion";
 
 export default function FactDetails() {
@@ -21,8 +20,8 @@ export default function FactDetails() {
               <p>X</p>
             </button>
             <div className="card-header">
-              <p>{factDetails}</p>
-              <img src={getFactImage()} alt="cat" />
+              <p>{factDetails.fact}</p>
+              <img src={factDetails.image} alt="cat" />
             </div>
           </>
         )}

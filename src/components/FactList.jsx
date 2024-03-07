@@ -42,25 +42,28 @@ export default function FactList() {
               >
                   <a
                     className="card1"
-                    style={
-                      factDetails === fact.fact
+                    style={factDetails &&
+                      factDetails.fact === fact.fact
                         ? { backgroundColor: "#00838d" }
                         : null
                     }
                     href="#"
-                    onClick={(event) => { handleFactDetails(fact.fact, event); handleAnimation(); }}
+                    onClick={(event) => { handleFactDetails(fact.fact, fact.image, event); handleAnimation(); }}
                   >
+                    <div className="container-fact">
                     <p
-                      style={
-                        factDetails === fact.fact ? { color: "white" } : null
+                      style={factDetails &&
+                        factDetails.fact === fact.fact ? { color: "white" } : null
                       }
                     >
                       {fact.fact}
                     </p>
+                    <img className='list-img' src={fact.image} alt="cat photo" />
+                    </div>
                     <p
                       className="small"
-                      style={
-                        factDetails === fact.fact ? { color: "white" } : null
+                      style={factDetails &&
+                        factDetails.fact === fact.fact ? { color: "white" } : null
                       }
                     >
                       Length: {fact.length}
